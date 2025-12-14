@@ -77,8 +77,7 @@ def compute_histogram_ng(img, nb_classes):
         
     cv.imshow("Histogramme des couleurs", img_hist)
 
-
-img = cv.imread("C:/Users/paulg/Pictures/Camera Roll/WIN_20251202_16_31_39_Pro.jpg")
+img = cv.imread("src/img.jpg")
 
 cv.imshow("Image d'origine", img)
 compute_histogram_ng(img, 10)

@@ -29,7 +29,7 @@ def rgb_to_cmyk(img):
     return cmyk
 
 
-img = cv2.imread("C:/Users/paulg/Pictures/Camera Roll/WIN_20251202_16_31_39_Pro.jpg")
+img = cv2.imread("src/img.jpg")
 
 img_RGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img_HSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)

@@ -40,7 +40,7 @@ def compute_histogram_ng(img, nb_classes):
     cv.imshow("Histogramme des niveaux de gris", img_hist)
 
 
-img = cv.imread("C:/Users/paulg/Pictures/Camera Roll/WIN_20251202_16_31_39_Pro.jpg")
+img = cv.imread("src/img.jpg")
 img_ng = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 cv.imshow("Image en gris", img_ng)

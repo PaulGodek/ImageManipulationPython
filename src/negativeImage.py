@@ -4,8 +4,8 @@ import sys
 
 pathToOutput = "output/"
 
-pathToFile = "C:/Users/paulg/Pictures/Camera Roll/"
-fileName = "WIN_20251202_16_31_39_Pro.jpg"
+pathToFile = "src/"
+fileName = "img.jpg"
 fileNameWithoutExtension = fileName.split(".")[0]
 fileExtension = fileName.split(".")[1]
 
