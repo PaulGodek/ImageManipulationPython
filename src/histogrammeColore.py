@@ -46,32 +46,31 @@ def compute_histogram_ng(img, nb_classes):
                     p1 = oldPR
                     p2 = (int((h + 1) * largeur / nb_classes),
                     int(hauteur - (hist1[h] / max_val1 * hauteur)))
-                    
+
                     # Dessine la ligne rouge
                     cv.line(img_hist, p1, p2, (255, 0, 0), 2)
-                    
+
                     oldPR = p2
-                    break
+                
                 case 1: 
                     p1 = oldPG
                     p2 = (int((h + 1) * largeur / nb_classes),
                     int(hauteur - (hist2[h] / max_val2 * hauteur)))
-                    
+
                     # Dessine la ligne verte
                     cv.line(img_hist, p1, p2, (0, 255, 0), 2)
-                    
+
                     oldPG = p2
-                    break
+                
                 case _:
                     p1 = oldPB
                     p2 = (int((h + 1) * largeur / nb_classes),
                     int(hauteur - (hist3[h] / max_val3 * hauteur)))
-                    
+
                     # Dessine la ligne bleue
                     cv.line(img_hist, p1, p2, (0, 0, 255), 2)
-                    
+
                     oldPB = p2
-                    break
             
             
         
@@ -80,7 +79,7 @@ def compute_histogram_ng(img, nb_classes):
 img = cv.imread("src/img.jpg")
 
 cv.imshow("Image d'origine", img)
-compute_histogram_ng(img, 10)
+compute_histogram_ng(img, 50)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
