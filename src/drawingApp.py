@@ -6,7 +6,6 @@ import numpy as np
 def nothing(x):
     pass
 
-
 # Création de la fenêtre pour les sliders
 cv2.namedWindow("Sliders")
 cv2.createTrackbar("Lower H", "Sliders", 70, 255, nothing)
@@ -25,11 +24,11 @@ if not cap.isOpened():
 else:
     print("Accès à la webcam !")
 
-# Canvas pour dessiner
+# Valeurs par défaut
 canvas = None
 old_point = None
-
 ret = True
+
 while ret:
     ret, frame = cap.read()
     if ret:
@@ -64,7 +63,7 @@ while ret:
             # Trouver le plus gros contour
             largest_contour = max(contours, key=cv2.contourArea)
 
-            # Trouver le point le plus au nord-ouest
+            # Trouver le point le plus au nord-est
             northest_point = tuple(largest_contour[largest_contour[:, :, 0].argmax()][0])
 
             # Dessiner sur le canvas
@@ -78,13 +77,13 @@ while ret:
             old_point = northest_point
 
         # Combiner le canvas avec le flux vidéo
-        combined = cv2.add(frame, canvas)
+        combined = cv2.add(frame, canvas) # L'addition rend la ligne un peu transparente mais tant pis
 
         # Afficher les différentes fenêtres
         cv2.imshow("Masque", mask)
         cv2.imshow("Dessin", combined)
 
-        if cv2.waitKey(1) == 27:  # Touche 'Échap' pour quitter
+        if cv2.waitKey(1) == 27:  # Echap pour quitter que je me trompe plus
             ret = False
     else:
         print("Erreur lors de la capture vidéo.")
